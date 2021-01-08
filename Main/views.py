@@ -34,7 +34,7 @@ def findParent(name):
     return qs
 
 class ReadAPIView(ListAPIView):
-    serializer_class = ItemSerializer
+    # serializer_class = ItemSerializer
     # def get_queryset(self):
     #     qs = ItemTable.objects.all()
     #     return qs
@@ -48,7 +48,6 @@ class ReadAPIView(ListAPIView):
                 "Message":"Please provide intiger 0-4 "
             })
         name = self.request.GET.get('name', "")
-        # print(option)
         if option in [0, 1, 2, 3, 4]:
             "by default option is 0 so list all products"
             qs = ItemTable.objects.all()
